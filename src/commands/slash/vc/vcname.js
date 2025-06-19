@@ -36,7 +36,7 @@ module.exports = {
             return interaction.reply({ content: '❌ Only the owner of the channel can rename it.', ephemeral: true });
         }
 
-        const newName = interaction.options.getString('new_name');
+        const newName = interaction.options.getString('name');
 
         try {
             await voiceChannel.setName(newName);

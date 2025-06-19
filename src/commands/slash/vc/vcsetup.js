@@ -22,58 +22,62 @@ module.exports = {
         try {
             const guild = interaction.guild;
 
-            // Nombre dinámico para la categoría
             const categoryName = names.categories[Math.floor(Math.random() * names.categories.length)];
 
-            // Crear categoría
             const category = await guild.channels.create({
                 name: `📞 ${categoryName}`,
                 type: ChannelType.GuildCategory,
             });
 
-            // Crear canal de voz
             const voiceChannel = await guild.channels.create({
                 name: 'create',
                 type: ChannelType.GuildVoice,
                 parent: category.id,
             });
 
-            // Crear canal de texto
             const textChannel = await guild.channels.create({
                 name: 'panel',
                 type: ChannelType.GuildText,
                 parent: category.id,
             });
 
-            // Embed del panel
             const embed = new EmbedBuilder()
-                .setTitle('🎀 Mira VC Panel')
-                .setDescription(`**🔒 Lock** – Prevent others from joining  
-**🔓 Unlock** – Allow everyone to join  
-**🙈 Ghost** – Hide the VC from others  
-**👁️ Show** – Make the VC visible again  
-**🛡️ Claim** – Only you can use the buttons  
-**🚪 Release** – Everyone can use the buttons  
+                .setTitle('Mira VC Interface')
+                .setDescription(
+                    `You can use this interface to manage your voice channel.\n\n` +
+                    `**🔒 Lock** – Prevent others from joining\n` +
+                    `**🔓 Unlock** – Allow everyone to join\n` +
+                    `**👻 Ghost** – Hide the VC from others\n` +
+                    `**👁️ Show** – Make the VC visible again\n` +
+                    `**🛡️ Claim** – Only you can use the buttons\n` +
+                    `**🚪 Release** – Everyone can use the buttons\n\n` +
+                    `✏️ Rename VC: \`/vcname <new name>\`\n` +
+                    `⏰ Wake someone: \`/wakeup @user\``
+                )
+                .setImage('attachment://panelbuttons.png')
+                .setColor('#333342')
+                .setFooter({ text: 'Use the buttons below to manage your voice channel.' });
 
-✏ Rename VC: \`/name <new name>\`  
-⏰ Wake someone: \`/wakeup @user\``)
-                .setColor('#ffcfe0');
-
-            // Botones en dos filas
             const row1 = new ActionRowBuilder().addComponents(
-                new ButtonBuilder().setCustomId('lock').setLabel('Lock').setEmoji('🔒').setStyle(ButtonStyle.Danger),
-                new ButtonBuilder().setCustomId('unlock').setLabel('Unlock').setEmoji('🔓').setStyle(ButtonStyle.Success),
-                new ButtonBuilder().setCustomId('ghost').setLabel('Ghost').setEmoji('🙈').setStyle(ButtonStyle.Secondary),
-                new ButtonBuilder().setCustomId('show').setLabel('Show').setEmoji('👁️').setStyle(ButtonStyle.Primary)
+                new ButtonBuilder().setCustomId('lock').setEmoji('🔒').setStyle(ButtonStyle.Secondary),
+                new ButtonBuilder().setCustomId('unlock').setEmoji('🔓').setStyle(ButtonStyle.Secondary),
+                new ButtonBuilder().setCustomId('ghost').setEmoji('👻').setStyle(ButtonStyle.Secondary)
             );
 
             const row2 = new ActionRowBuilder().addComponents(
-                new ButtonBuilder().setCustomId('claim').setLabel('Claim').setEmoji('🛡️').setStyle(ButtonStyle.Secondary),
-                new ButtonBuilder().setCustomId('release').setLabel('Release').setEmoji('🚪').setStyle(ButtonStyle.Primary)
+                new ButtonBuilder().setCustomId('show').setEmoji('👁️').setStyle(ButtonStyle.Secondary),
+                new ButtonBuilder().setCustomId('claim').setEmoji('🛡️').setStyle(ButtonStyle.Secondary),
+                new ButtonBuilder().setCustomId('release').setEmoji('🚪').setStyle(ButtonStyle.Secondary)
             );
 
-            // Enviar el panel
-            await textChannel.send({ embeds: [embed], components: [row1, row2] });
+            await textChannel.send({
+                embeds: [embed],
+                components: [row1, row2],
+                files: [{
+                    attachment: 'assets/panelbuttons.png',
+                    name: 'panelbuttons.png'
+                }]
+            });
 
             await interaction.editReply({ content: '✅ VC system setup complete.' });
         } catch (err) {
