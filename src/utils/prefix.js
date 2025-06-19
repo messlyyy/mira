@@ -1,4 +1,4 @@
-const defaultPrefix = '!';
+const defaultPrefix = ',';
 const config = require('../data/guilds.json');
 
 function getPrefix(guildId) {
