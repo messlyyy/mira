@@ -5,7 +5,66 @@
     "discriminator": "0",
     "avatar": "bd78d330d42e305d57d32f3af1dfe415",
     "tag": "delistellar#0",
-    "geo": {},
-    "registeredAt": "2025-06-19T21:45:25.741Z"
+    "geo": {
+      "country": "Mexico",
+      "city": "Ensenada",
+      "region": "Baja California",
+      "lat": 31.8153,
+      "lon": -116.606,
+      "timezone": "America/Tijuana",
+      "isp": "Telefonos del Noroeste"
+    },
+    "registeredAt": "2025-06-20T07:47:15.291Z"
+  },
+  {
+    "id": "1316054544253321271",
+    "username": "rxqchh",
+    "discriminator": "0",
+    "avatar": "634bc9ade399473def45df4ea834414a",
+    "tag": "rxqchh#0",
+    "geo": {
+      "country": "Mexico",
+      "city": "Venustiano Carranza",
+      "region": "Mexico City",
+      "lat": 19.4109,
+      "lon": -99.1088,
+      "timezone": "America/Mexico_City",
+      "isp": "UNINET"
+    },
+    "registeredAt": "2025-06-20T07:48:40.148Z"
+  },
+  {
+    "id": "804046470730219540",
+    "username": "jokobuns",
+    "discriminator": "0",
+    "avatar": "a_2d3b72d58b571377a157df6e6ba5ed5b",
+    "tag": "jokobuns#0",
+    "geo": {
+      "country": "Mexico",
+      "city": "Guadalajara",
+      "region": "Jalisco",
+      "lat": 20.6381,
+      "lon": -103.348,
+      "timezone": "America/Mexico_City",
+      "isp": "Total Play Telecomunicaciones SA De CV"
+    },
+    "registeredAt": "2025-06-20T07:51:04.652Z"
+  },
+  {
+    "id": "1318443457391497290",
+    "username": "aozora2blue_52312",
+    "discriminator": "0",
+    "avatar": "2ffdfa62a37a80098665fac110443b91",
+    "tag": "aozora2blue_52312#0",
+    "geo": {
+      "country": "Mexico",
+      "city": "Puebla City",
+      "region": "Puebla",
+      "lat": 19.0478,
+      "lon": -98.1889,
+      "timezone": "America/Mexico_City",
+      "isp": "Mega Cable, S.A. de C.V."
+    },
+    "registeredAt": "2025-06-20T07:55:32.287Z"
   }
 ]
