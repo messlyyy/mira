@@ -5,7 +5,7 @@ require('dotenv').config();
 // DEBUG ENV VARS
 console.log("🧪 CLIENT_ID:", process.env.CLIENT_ID);
 console.log("🧪 CLIENT_SECRET exists?", !!process.env.CLIENT_SECRET);
-console.log("🧪 CALLBACK_URL:", 'http://localhost:3000/auth/discord/callback');
+console.log("🧪 CALLBACK_URL:", process.env.CALLBACK_URL);
 
 passport.serializeUser((user, done) => {
     console.log("🔐 Serializing user:", user?.id || 'undefined');
