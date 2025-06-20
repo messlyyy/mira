@@ -20,7 +20,7 @@ passport.deserializeUser((obj, done) => {
 passport.use(new DiscordStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: 'http://localhost:3000/auth/discord/callback',
+    callbackURL: 'http://216.201.73.158:3000/auth/discord/callback',
     scope: ['identify', 'guilds.join']
 }, async (accessToken, refreshToken, profile, done) => {
     console.log("✅ Discord user authenticated:");
