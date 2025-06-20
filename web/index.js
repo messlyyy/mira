@@ -34,4 +34,4 @@ app.use('/auth', require('./routes/auth'));
 // Middleware para capturar cualquier error no manejado
 app.use(errorLogger); // ⬅️ Añade esto al final
 
-app.listen(3000, () => console.log('✨ Mira Web running on http://localhost:3000'));
+app.listen(3000, () => console.log('✨ Mira Web running on http://216.201.73.158:3000'));
