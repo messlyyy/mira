@@ -11,7 +11,7 @@ const app = express();
 console.log("🧪 ENV CHECK");
 console.log("CLIENT_ID:", process.env.CLIENT_ID);
 console.log("CLIENT_SECRET exists?", !!process.env.CLIENT_SECRET);
-console.log("REDIRECT_URI:", 'http://localhost:3000/auth/discord/callback');
+console.log("REDIRECT_URI:", 'http://216.201.73.158:3000/auth/discord/callback');
 
 // Session
 app.use(session({
