@@ -19,6 +19,9 @@ module.exports = async (client, interaction) => {
 
     // ─── PANEL BUTTONS ───────────────────────────────────────────────────────
     if (interaction.isButton()) {
+        const panelButtonIds = ['lock', 'unlock', 'ghost', 'show', 'claim', 'release'];
+        if (!panelButtonIds.includes(interaction.customId)) return;
+
         try {
             const voiceChannel = interaction.member.voice?.channel;
             if (!voiceChannel) {
@@ -75,7 +78,7 @@ module.exports = async (client, interaction) => {
             }
 
         } catch (err) {
-            console.error('❌ Error handling button interaction:', err);
+            console.error('❌ Error handling panel button:', err);
             return interaction.reply({ content: '❌ Something went wrong with the button.', ephemeral: true });
         }
     }
